@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<%- include ('partials/head.ejs') -%>
+    
+<body >
+    <%- include ('partials/header.ejs') -%>
+    <%- include ('partials/nav.ejs') -%>
+
+    <main>
+        <div class="moveup"> 
+
+                    <h5 ><%= sessionData.connection.name %></h5>
+                 <div  class="row" id="para">
+                    <div > <img src="./../assets/DJ.jpg" height=100 alt="welcome">
+                        </div>
+                        <div>
+                        Host: <%=sessionData.connection.subtitle%><br> When:<%= sessionData.connection.date%><br>TIme: <%= sessionData.connection.time%><br>
+                        Where: <%= sessionData.connection.venue %>
+                        
+                    </div>
+                    </div>
+                    <br> <br>   
+                    
+                    
+               
+                <h5> DETAILS</h5>
+                        <h6 style="padding-left: 80px;"><%=sessionData.connection.details%><br></h6>
+                            
+        </div>
+
+                <div class="moveright">
+                    Are you going? 
+                    <br>
+                    <button onclick="location.href='/userConnections?action=Yes&id=<%= sessionData.connection.workshopId%>'" type="button"
+                        class="btn  btn-success">YES</button>
+                    <button onclick="location.href='/userConnections?action=NO&id=<%= sessionData.connection.workshopId%>'" type="button"
+                        class="btn btn-danger">NO</button>
+                    <button onclick="location.href='/userConnections?action=MAYBE&id=<%= sessionData.connection.workshopId%>'" type="button"
+                        class="btn btn-info">MAYBE</button>
+                </div>
+    
+    </main>
+    <%- include ('partials/footer.ejs') -%>
+</body>

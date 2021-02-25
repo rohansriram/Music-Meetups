@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ('partials/head.ejs') -%>
+
+<body>
+  <%- include ('partials/header.ejs') -%>
+  <%- include ('partials/nav.ejs') -%>
+  <div id="formdiv">
+    <% if(errors){%>
+  <p class='invalid'>
+    Please fix the below errors:<br>
+  
+      <%errors.forEach(function(error){%>
+        <a class='invalid'>
+          *<%=error.msg %><br>
+        </a>
+          <%});  } %>
+    </div>
+  <main class="body-content-wrapper">
+        
+    <form id="conform" method="POST" action="/connections">
+
+                <div id = "topicd">
+                <label class="col-sm-2 ">Topic</label>
+                <input id = "topic" placeholder="Enter Topic" name ="topic" type="text" minlength = "5" required>
+            </div>
+              
+            <div id = "named">
+             <label class="col-sm-2">Name</label>
+             <input id = "name" name ="name" placeholder="Enter Name" type="text" minlength = "5" required>   
+        </div>
+        <div id = "detailsd">
+            <label class="col-sm-2">Details</label>
+            <textarea rows="2" name ="details" placeholder="Enter Details" cols="20" minlength = "5" required>
+         </textarea>
+        </div>
+        
+        <div id = "whered">
+            <label for = "where" class="col-sm-2">Where</label>
+            <input id = "where" name = "venue" placeholder="Enter Venue" type="text" minlength = "5" required>
+        </div>
+        
+        <div id = "whend">
+            <label for = "when" class="col-sm-2">When</label>
+            <input id = "when" name = "date" type="date" required>
+        </div>
+
+        <div id = "timed">
+            <label for = "time" class="col-sm-2">Time</label>
+            <input id = "time" name = "time" type="time" required>
+        </div>
+        
+        <div id="create_con">
+            <button type="submit" id="create_btn" class="col-sm-2">Create Connection</button>
+        </div>
+  </form>
+</main>
+            
+<%- include ('partials/footer.ejs') -%>
+
+</body>
+</html>

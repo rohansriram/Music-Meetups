@@ -1,0 +1,27 @@
+{
+  "name": "milestone_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "array-list": "^1.0.7",
+    "bcryptjs": "^2.4.3",
+    "browser-sync": "^2.26.7",
+    "browsersync": "0.0.1-security",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.4.1",
+    "mongoose": "^5.9.12",
+    "node": "^12.16.3",
+    "nodemon": "^1.19.3",
+    "password-validator": "^5.0.3",
+    "random": "^2.2.0",
+    "validator": "^13.0.0"
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('partials/head.ejs') -%>
+
+<body>
+
+    <%- include ('partials/header.ejs') -%>
+    <%- include ('partials/nav.ejs') -%>
+      
+      
+    <main>
+            <h5 class="h5class">
+                    NINER CONNECTIONS!</h5>
+        <table >
+               
+            <tr>
+                <% if(sessionData.userconnections.length === 0) { %>
+                    <th>  <p>No connections to display!!</p> </th>
+                <% } else{ %>
+                <th>Connection </th>
+                <th>Category</th>
+                <th>Going?</th>
+                <th>Update </th>
+                <th>Delete </th>
+                
+            </tr>
+            <% for(let i = 0; i < sessionData.userconnections.length; i++) { %>
+            <tr>
+                <td ><img src="./../assets/music.jpg" height=50 alt="welcome"> <a><%= sessionData.userconnections[i].category %></a></td>
+                <td ><a><%= sessionData.userconnections[i].name %></a></td>
+                <td><a><%= sessionData.userconnections[i].rsvp %></a></td>
+                <td><button onclick="location.href='/connection?connectionID=<%= sessionData.userconnections[i].connectionId %>'"
+                        class="btn btn-primary btn-sm">UPDATE</button></td>
+                       <td><button onclick="location.href='/userConnections?delete=<%= sessionData.userconnections[i].connectionId %>&id=<%= sessionData.userconnections[i].id %>'" class="btn btn-primary btn-sm">DELETE</button></td> 
+                
+            </tr>
+            <% } %>
+        <% } %>
+        </table>
+
+    </main>
+
+    <%- include ('partials/footer.ejs') -%>
+</body>
+</html>

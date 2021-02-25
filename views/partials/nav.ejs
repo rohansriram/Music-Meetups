@@ -1,0 +1,24 @@
+<nav>
+    <header>
+          
+               
+            <hr>
+            <% if(typeof sessionData !== "undefined") {
+             if(sessionData.user !== undefined && sessionData.user !== null) {%>
+                <div class="col-xs-2">
+                 <a href="connections">Connections</a>
+                 
+                 </div>
+            <% } else {%>
+                <div class="col-xs-2">
+                  <a href="connections">Connections</a>
+              </div>
+            <% };
+          } else { %>
+            <div class="col-xs-2">
+                <a class="col-xs-2" href="connections">Connections</a>
+            </div>
+          <% }; %>
+
+    </header>
+</nav>

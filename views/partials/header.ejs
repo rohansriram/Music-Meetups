@@ -1,0 +1,27 @@
+<header>
+   
+    <ul>
+      
+        
+      
+    <% if(typeof sessionData !== "undefined") {
+     if(sessionData.user !== undefined && sessionData.user !== null) {%>
+        <li class="col-md-2"><a  href="newConnection">Start a New Connection &nbsp;&nbsp;|</a></li>
+        <li class="col-md-2"> <a  href="userConnections">My Connections &nbsp;&nbsp;|</a></li>
+        <li class="col-md-2"><a  href="logout">Logout &nbsp;&nbsp;</a></li>
+    <% } else {%>
+        <li class="col-md-2"><a  href="login">Start a New Connection &nbsp;&nbsp;|</a></li>
+        <li class="col-md-2"><a  href="login">Sign Up &nbsp;&nbsp;|</a></li>
+        <li class="col-md-2"><a  href="login">Login</a></li>
+    <% };
+  } else { %>
+    <li class="col-md-2"><a  href="login">Start a New Connection &nbsp;&nbsp;|</a></li>
+    <li class="col-md-2"><a href="login">Sign Up &nbsp;&nbsp;|</a></li> 
+    <li class="col-md-2"><a href="login">Login</a></li>
+  <% }; %>
+
+    </ul>
+    
+        <div><a href="index"><img class="col-xs-3" src="./../assets/music.jpg" height=50 width=50 alt="welcome"></a></div>
+
+    </header>

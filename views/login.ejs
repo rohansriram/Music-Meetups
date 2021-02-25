@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('partials/head.ejs') -%>
+
+<body >
+ 
+
+    <%- include ('partials/header.ejs') -%>
+    <%- include ('partials/nav.ejs') -%>
+
+    <section>
+        <h1>Welcome to Music Sessions</h1>
+        <p>Please enter your username and password to sign in!<br>
+            <% if(errors){%>
+                <p class='invalid'>
+                  Please fix the below errors:<br>
+                
+                    <%errors.forEach(function(error){%>
+                      <a class='invalid'>
+                        *<%=error.msg %><br>
+                      </a>
+                    </p>
+                        <%});  } %>
+        <form id="Login-form" method = "POST" action = "/login">
+        <label for="email"><b>Username</b></label>
+        <input type="text" placeholder="Enter email" id="email" name="email" required>
+        <br>
+        <label for="pwd"><b>Password</b></label>
+        <input type="password" placeholder="*Case sensitive*" id="pwd" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+        </form>
+
+    </section>
+
+    <%- include ('partials/footer.ejs') -%>
+         
+</body>
+</html>
